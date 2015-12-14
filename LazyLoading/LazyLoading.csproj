@@ -41,11 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ghost\DataSourceGhost.cs" />
+    <Compile Include="Ghost\Department.cs" />
+    <Compile Include="Ghost\DomainObject.cs" />
+    <Compile Include="Ghost\Employee.cs" />
+    <Compile Include="Ghost\LoadStatus.cs" />
     <Compile Include="LazyInitialization\Customer.cs" />
     <Compile Include="LazyInitialization\DataSource.cs" />
     <Compile Include="LazyInitialization\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueHolder\IValueLoader.cs" />
+    <Compile Include="ValueHolder\Product.cs" />
+    <Compile Include="ValueHolder\Supplier.cs" />
+    <Compile Include="ValueHolder\SupplierMapper.cs" />
+    <Compile Include="ValueHolder\ValueHolder.cs" />
     <Compile Include="VirtualProxy\Image.cs" />
     <Compile Include="VirtualProxy\RealImage.cs" />
     <Compile Include="VirtualProxy\VirtualProxyImage.cs" />
@@ -53,10 +63,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ghost\" />
-    <Folder Include="ValueHolder\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

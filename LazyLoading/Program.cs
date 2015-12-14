@@ -1,4 +1,6 @@
-﻿using LazyLoading.LazyInitialization;
+﻿using LazyLoading.Ghost;
+using LazyLoading.LazyInitialization;
+using LazyLoading.ValueHolder;
 using LazyLoading.VirtualProxy;
 using System;
 using System.Collections.Generic;
@@ -17,10 +19,9 @@ namespace LazyLoading
             do
             {
                 Console.WriteLine("A: Lazy Initialization.");
-                Console.WriteLine("B: Lazy Initialization native.");
-                Console.WriteLine("C: Virtual Proxy.");
-                Console.WriteLine("D: Value Holder.");
-                Console.WriteLine("E: Ghost.");
+                Console.WriteLine("B: Virtual Proxy.");
+                Console.WriteLine("C: Value Holder.");
+                Console.WriteLine("D: Ghost.");
                 Console.WriteLine("Q: quit.");
 
                 Console.Write("Enter option: ");
@@ -38,12 +39,20 @@ namespace LazyLoading
                         }
                         break;
                     case 'b':
-                        break;
-                    case 'c':
                         Image image = new VirtualProxyImage("teddy-bear.jpg");
                         image.Display();
                         break;
+                    case 'c':
+                        SupplierMapper mapper = new SupplierMapper();
+                        Supplier supplier = mapper.Load(10);
+
+                        foreach (Product product in supplier.Products)
+                        {
+                            Console.WriteLine("Got product {0} for supplier {1}.", product.ProductID, supplier.SupplierID);
+                        }
+                        break;
                     case 'd':
+                        Employee employee = new Employee(5);
                         break;
                     case 'q':
                         isRunning = false;
