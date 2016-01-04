@@ -8,8 +8,6 @@ namespace LazyLoading.Ghost
 {
     public abstract class DomainObject
     {
-        public int ID { get; set; }
-
         public LoadStatus Status { get; set; }
 
         public bool IsGhost
@@ -32,18 +30,6 @@ namespace LazyLoading.Ghost
             Status = LoadStatus.Loaded;
         }
 
-        protected DomainObject(int id)
-        {
-            ID = id;
-            Status = LoadStatus.Ghost;
-        }
-
-        protected void Load()
-        {
-            if (IsGhost)
-            {
-                DataSourceGhost.Load(this);
-            }
-        }
+        protected abstract void Load();
     }
 }

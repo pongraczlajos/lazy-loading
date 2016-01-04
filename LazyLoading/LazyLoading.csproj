@@ -41,11 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ghost\DataSourceGhost.cs" />
-    <Compile Include="Ghost\Department.cs" />
+    <Compile Include="Ghost\Blog.cs" />
     <Compile Include="Ghost\DomainObject.cs" />
-    <Compile Include="Ghost\Employee.cs" />
     <Compile Include="Ghost\LoadStatus.cs" />
+    <Compile Include="Ghost\Post.cs" />
     <Compile Include="LazyInitialization\Customer.cs" />
     <Compile Include="LazyInitialization\DataSource.cs" />
     <Compile Include="LazyInitialization\Order.cs" />

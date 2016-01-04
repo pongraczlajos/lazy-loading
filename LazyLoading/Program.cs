@@ -52,7 +52,10 @@ namespace LazyLoading
                         }
                         break;
                     case 'd':
-                        Employee employee = new Employee(5);
+                        Blog blog = new Blog(5);
+                        Console.WriteLine("Title for blog [{0}]: {1}.", blog.ID, blog.Title);
+                        Console.WriteLine("Title for post [{0}]: {1}.", blog.Posts[1].ID, blog.Posts[1].Title);
+
                         break;
                     case 'q':
                         isRunning = false;
